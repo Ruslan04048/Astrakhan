@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>КАК ЖИВУТ СТАРИННЫЕ ДОМА В ЦЕНТРЕ АСТРАХАНИ</title>
+	</head>
+	<body>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			a {
+				text-decoration: none;
+				color: #1a2f3e;
+			}
+
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				overflow-x: hidden;
+				font-family: 'Montserrat', sans-serif;
+				box-sizing: border-box;
+			}
+
+			li {
+				list-style: none;
+			}
+
+			.container {
+				max-width: 1400px;
+				margin: 0 auto;
+			}
+
+			header {
+				margin-bottom: 30px;
+			}
+
+			.register-background {
+				background: #000000b0;
+				width: 100%;
+				height: 100vh;
+				position: absolute;
+				z-index: 1;
+				display: none;
+			}
+
+			.register-form {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background: #fff;
+				width: 750px;
+				height: 550px;
+				padding: 25px 15px;
+			}
+
+			.entrance-column {
+				width: 50%;
+				height: 550px;
+				border-right: 2px solid #103148;
+				float: left;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.entrance-up-row {
+				display: flex;
+				align-items: center;
+				margin-left: -100px;
+				margin-top: 40px;
+				gap: 65px;
+				color: #253139;
+				font-size: 32px;
+				font-weight: 600;
+				margin-bottom: 35px;
+			}
+
+			.up-row-img {
+				cursor: pointer;
+			}
+
+			.switch {
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				width: 310px;
+				height: 60px;
+				border: 1px solid #d8dce6;
+				border-radius: 20px;
+				margin-bottom: 25px;
+			}
+
+			.mail {
+				background: #f1f2f5;
+				padding: 18px 55px;
+				margin-left: -24px;
+				border-radius: 18px;
+			}
+
+			form {
+				display: flex;
+				flex-direction: column;
+			}
+
+			input {
+				width: 310px;
+				height: 60px;
+				margin-bottom: 25px;
+				border-radius: 20px;
+				border: none;
+				border: 2px solid #292933;
+				font-size: 24px;
+				padding: 0 0 0 15px;
+			}
+
+			form button {
+				width: 325px;
+				height: 60px;
+				border-radius: 20px;
+				background: #103148;
+				border: none;
+				font-size: 16px;
+				color: #fff;
+				cursor: pointer;
+				border: 1px solid #292933;
+			}
+
+			.register-column {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.register-up-row {
+				display: flex;
+				align-items: center;
+				margin-top: 40px;
+				gap: 40px;
+				color: #253139;
+				font-size: 32px;
+				font-weight: 600;
+				margin-bottom: 35px;
+			}
+
+			.header-up-block {
+				height: 100px;
+				display: flex;
+				justify-content: space-around;
+				color: #253139;
+				text-align: center;
+				padding-top: 30px;
+				margin-bottom: 50px;
+			}
+
+			.icon {
+				cursor: pointer;
+			}
+
+			@media (max-width: 1000px) {
+				.logo,
+				.icon {
+					width: 70px;
+					height: 70px;
+				}
+			}
+
+			.h1-title {
+				font-size: 64px;
+				font-weight: 600;
+				width: 700px;
+				line-height: 34px;
+				margin-top: 20px;
+			}
+
+			span {
+				font-size: 32px;
+				font-weight: 500;
+			}
+
+			@media (max-width: 1370px) {
+				.h1-title {
+					font-size: 48px;
+					width: 550px;
+				}
+				.h1-title span {
+					font-size: 24px;
+				}
+			}
+
+			@media (max-width: 900px) {
+				.h1-title {
+					font-size: 36px;
+					width: 450px;
+				}
+				.h1-title span {
+					font-size: 20px;
+				}
+			}
+
+			.header-down-block {
+				height: 80px;
+				border-top: 2px solid #9cd7ff;
+				border-bottom: 2px solid #9cd7ff;
+			}
+
+			.nav-list {
+				display: flex;
+				align-items: center;
+				height: 80px;
+				justify-content: space-evenly;
+				font-size: 32px;
+				color: #1a2f3e;
+			}
+
+			@media (max-width: 680px) {
+				.nav-list img {
+					display: none;
+				}
+			}
+
+			.nav-link {
+				font-weight: 400;
+			}
+
+			@media (max-width: 1370px) {
+				.nav-link {
+					font-size: 24px;
+				}
+			}
+			@media (max-width: 900px) {
+				.nav-link {
+					font-size: 21px;
+				}
+			}
+
+			@media (max-width: 680px) {
+				.nav-link {
+					font-size: 15px;
+				}
+			}
+
+			.footer {
+				border-top: 2px solid #c0e6ff;
+				color: #fff;
+				font-weight: 600;
+			}
+
+			@media (max-width: 1370px) {
+				.footer-up-block {
+					font-size: 24px;
+				}
+			}
+
+			.footer-down-block {
+				height: 200px;
+				background: #145a88;
+			}
+
+			.container2 {
+				max-width: 1400px;
+				margin: 0 auto;
+				display: flex;
+				justify-content: space-evenly;
+				align-items: center;
+				height: 200px;
+			}
+
+			.social-icons {
+				display: flex;
+				gap: 40px;
+			}
+
+			@media (max-width: 1370px) {
+				.social-icons {
+					gap: 25px;
+				}
+				.tg,
+				.vk,
+				.inst {
+					width: 50px;
+					height: 50px;
+				}
+			}
+
+			@media (max-width: 990px) {
+				.social-icons {
+					gap: 15px;
+				}
+				.tg,
+				.vk,
+				.inst {
+					width: 40px;
+					height: 40px;
+				}
+			}
+
+			@media (max-width: 750px) {
+				.tg,
+				.vk,
+				.inst {
+					width: 30px;
+					height: 30px;
+				}
+			}
+
+			@media (max-width: 650px) {
+				.tg,
+				.vk,
+				.inst {
+					width: 25px;
+					height: 25px;
+				}
+			}
+
+			.footer-text {
+				font-size: 32px;
+				margin-bottom: 30px;
+			}
+
+			@media (max-width: 1370px) {
+				.footer-text {
+					font-size: 24px;
+				}
+			}
+
+			@media (max-width: 990px) {
+				.footer-text {
+					font-size: 20px;
+				}
+			}
+
+			@media (max-width: 750px) {
+				.footer-text {
+					font-size: 18px;
+				}
+			}
+
+			@media (max-width: 650px) {
+				.footer-text {
+					font-size: 14px;
+				}
+			}
+
+			.contact-numbers,
+			.email-text,
+			.help-text {
+				font-size: 24px;
+				margin-bottom: 15px;
+			}
+
+			@media (max-width: 1370px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 20px;
+				}
+			}
+
+			@media (max-width: 990px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 17px;
+				}
+			}
+
+			@media (max-width: 750px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 14px;
+				}
+			}
+
+			@media (max-width: 650px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 10px;
+				}
+			}
+			@media (max-width: 1370px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 20px;
+				}
+			}
+
+			@media (max-width: 990px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 17px;
+				}
+			}
+
+			@media (max-width: 750px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 14px;
+				}
+			}
+
+			@media (max-width: 650px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 10px;
+				}
+			}
+
+			.main-title {
+				text-align: center;
+				font-size: 64px;
+				color: #253139;
+				font-weight: 500;
+				margin-bottom: 50px;
+			}
+
+			.main-images {
+				display: flex;
+				gap: 50px;
+				margin-bottom: 50px;
+			}
+
+			.main-text {
+				font-size: 18px;
+				margin-bottom: 50px;
+			}
+
+			b {
+				font-size: 24px;
+				margin-top: 15px;
+			}
+
+			.map {
+				display: flex;
+				justify-content: center;
+			}
+			.main-subtitle {
+				font-size: 28px;
+				font-weight: 600;
+				margin: 20px 0 20px 20px;
+			}
+			.paragraph {
+				text-indent: 30px;
+			}
+		</style>
+
+		<div class="container">
+			<header class="header">
+				<div class="header-up-block">
+					<a href="index.html"
+						><img src="images/pngwing 4.png" alt="Логотип" class="logo"
+					/></a>
+					<h1 class="h1-title">
+						ASTRAKHAN.RU <span>Региональный интернет-портал</span>
+					</h1>
+					<a href="regist.html"
+						><img
+							src="images/gg_profile.png"
+							alt="Иконка аккаунта"
+							class="icon"
+					/></a>
+				</div>
+				<div class="header-down-block">
+					<nav class="nav-menu">
+						<ul class="nav-list">
+							<li>
+								<a href="history.html" class="nav-link">ИСТОРИЯ ГОРОДА</a>
+							</li>
+							<li><a href="poster.html" class="nav-link">АФИША</a></li>
+							<li>
+								<a
+									href="gallery.html"
+									class="nav-link"
+									style="text-decoration: underline; font-weight: 600"
+									>ГАЛЕРЕЯ</a
+								>
+							</li>
+							<li><a href="ads.html" class="nav-link">ОБЪЯВЛЕНИЯ</a></li>
+							<li>
+								<img
+									src="images/material-symbols_search.png"
+									alt=""
+									height="50px"
+									width="50px"
+								/>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+		</div>
+
+		<div class="container">
+			<main class="main">
+				<div class="main-title">
+					КАК ЖИВУТ СТАРИННЫЕ ДОМА В ЦЕНТРЕ АСТРАХАНИ
+				</div>
+				<div class="main-images">
+					<img
+						src="images/photo_2024-03-29_18-05-29-1024x710.jpg"
+						alt=""
+						width="50%"
+					/>
+					<img
+						src="images/photo_2024-03-29_07-11-51-1024x768.jpg"
+						alt=""
+						width="50%"
+					/>
+				</div>
+				<div class="main-text">
+					<div class="main-subtitle">
+						Инициатива по восстановлению скульптуры
+					</div>
+					<div class="paragraph">
+						Сегодня мы освещали инициативу, касающуюся восстановления скульптуры
+						китайца с зонтиком на воротах старинной усадьбы. Не все астраханцы
+						восприняли эту идею положительно. Действительно, в городе много
+						других проблем. Но как интересно иногда пройтись по центральным
+						улицам и погрузиться в атмосферу прошлого. Дела с исторической
+						застройкой в Астрахани обстоят не слишком хорошо, но некоторые дома
+						на удивление неплохо сохранились. А какие-то даже были аккуратно
+						отреставрированы. Особенно если учесть тот факт, что в областном
+						центре можно встретить постройки и конца XVIII века.
+					</div>
+
+					<div class="main-subtitle">
+						Прогулка в поисках раритетов XVIII века
+					</div>
+					<div class="paragraph">
+						Приглашаем вас на небольшую прогулку в поисках таких раритетов. Для
+						этого мы обратились к статье историка и депутата Олега Шеина для
+						сборника материалов Астраханских краеведческих чтений 2022 года.
+						Рассказывая о постройках XVIII века, исследователь ссылается на
+						Опись домовладений Астрахани, проведенная в 1805 года, карту
+						Астрахани 1801 года и Реестр ранее выявленных объектов культурного
+						наследия, сформированный Госдирекцией по охране ОКН.
+					</div>
+
+					<div class="paragraph">
+						Напомним, что в XVIII веке многие здания в Астрахани были уничтожены
+						грандиозным пожаром (и не одним). Пострадали сотни домов, в первую
+						очередь деревянных. Да и каменные сооружения тоже нередко быстро
+						ветшали. Причиной тому были, в числе прочего, ильмени и ерики.
+						Современная улица Ленина, например, называлась Мочаговской – то есть
+						Болотной. Мочага – сырое, болотистое место. Река Кутум также в
+						разлив поднималась до стен Белого города, а Коса только-только
+						выходила из-под воды. Все это создавало подмочку, влиявшую на
+						состояние фундаментов. Впрочем, такая проблема есть в городе и
+						сейчас, только к этому добавились канализационные разливы. Оживление
+						строительства началось в 1790‑е годы, стали возводиться каменные
+						постройки, часть которых можно увидеть и в настоящее время. В первую
+						очередь, конечно, обращают на себя внимание торговые подворья.
+					</div>
+
+					<div class="main-subtitle">Торговля и торговые подворья</div>
+					<div class="paragraph">
+						Астрахань находилась на пересечении торговых путей, была посредником
+						между Европой и Азией. Торговля была оживленной: в частности, через
+						Тюк-Караган (мыс на Каспии) отправлялся ежегодно в Хиву и Бухарию
+						один караван в 500 верблюдов, оттуда приходит один или два каравана
+						уже на 700 животных. Везли железные и чугунные изделия, олово,
+						квасцы, ткани, деревянные изделия, краску. А, к примеру, из Персии
+						получали «хлопчатую бумагу, пряденую и сырец», чернильные орешки,
+						кунжут, фрукты и прочее. В Каспийской столице сохранились четыре
+						торговых подворья – Персидское, Индийское, Армянское и Демидовское.
+						Там проживали и занимались торговлей приезжие купцы. На фото ниже
+						представлены три из них. Можно сказать, что состояние зданий по
+						астраханским меркам весьма приличное.
+					</div>
+				</div>
+			</main>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<div class="footer-up-block">
+					<nav class="nav-menu">
+						<ul class="nav-list">
+							<li><a href="work.html" class="nav-link">РАБОТА</a></li>
+							<li><a href="ads.html" class="nav-link">ОБЪЯВЛЕНИЯ</a></li>
+							<li><a href="poster.html" class="nav-link">АФИША</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="footer-down-block">
+				<div class="container2">
+					<div class="social">
+						<div class="footer-text">Мы в соц. сетях:</div>
+						<div class="social-icons">
+							<a href="https://t.me/Ruslan167"
+								><img src="images/telegram_symbol.svg.png" alt="" class="tg"
+							/></a>
+							<a href="https://vk.com/id157025887"
+								><img src="images/vk_symbol.svg.png" alt="" class="vk"
+							/></a>
+							<a href="https://www.instagram.com/ruslan04048"
+								><img src="images/Group.png" alt="" class="inst"
+							/></a>
+						</div>
+					</div>
+					<div class="contact">
+						<div class="footer-text">Контакты:</div>
+						<div class="contact-numbers">
+							+79783216490 <br />
+							+79781296473
+						</div>
+					</div>
+					<div class="email">
+						<div class="footer-text">E-mail:</div>
+						<div class="email-text">
+							smi.astrakhan@mail.ru <br />
+							PR.astrakhan@mail.ru
+						</div>
+					</div>
+					<div class="help">
+						<div class="footer-text">Помощь</div>
+						<div class="help-text">
+							Служба поддержки <br />
+							Вопрос-ответ
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

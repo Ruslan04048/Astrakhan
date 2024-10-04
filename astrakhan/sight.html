@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>АСТРАХАНСКИЙ КРЕМЛЬ</title>
+	</head>
+	<body>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			a {
+				text-decoration: none;
+				color: #1a2f3e;
+			}
+
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				overflow-x: hidden;
+				font-family: 'Montserrat', sans-serif;
+				box-sizing: border-box;
+			}
+
+			li {
+				list-style: none;
+			}
+
+			.container {
+				max-width: 1400px;
+				margin: 0 auto;
+			}
+
+			header {
+				margin-bottom: 30px;
+			}
+
+			.register-background {
+				background: #000000b0;
+				width: 100%;
+				height: 100vh;
+				position: absolute;
+				z-index: 1;
+				display: none;
+			}
+
+			.register-form {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background: #fff;
+				width: 750px;
+				height: 550px;
+				padding: 25px 15px;
+			}
+
+			.entrance-column {
+				width: 50%;
+				height: 550px;
+				border-right: 2px solid #103148;
+				float: left;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.entrance-up-row {
+				display: flex;
+				align-items: center;
+				margin-left: -100px;
+				margin-top: 40px;
+				gap: 65px;
+				color: #253139;
+				font-size: 32px;
+				font-weight: 600;
+				margin-bottom: 35px;
+			}
+
+			.up-row-img {
+				cursor: pointer;
+			}
+
+			.switch {
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				width: 310px;
+				height: 60px;
+				border: 1px solid #d8dce6;
+				border-radius: 20px;
+				margin-bottom: 25px;
+			}
+
+			.mail {
+				background: #f1f2f5;
+				padding: 18px 55px;
+				margin-left: -24px;
+				border-radius: 18px;
+			}
+
+			form {
+				display: flex;
+				flex-direction: column;
+			}
+
+			input {
+				width: 310px;
+				height: 60px;
+				margin-bottom: 25px;
+				border-radius: 20px;
+				border: none;
+				border: 2px solid #292933;
+				font-size: 24px;
+				padding: 0 0 0 15px;
+			}
+
+			form button {
+				width: 325px;
+				height: 60px;
+				border-radius: 20px;
+				background: #103148;
+				border: none;
+				font-size: 16px;
+				color: #fff;
+				cursor: pointer;
+				border: 1px solid #292933;
+			}
+
+			.register-column {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.register-up-row {
+				display: flex;
+				align-items: center;
+				margin-top: 40px;
+				gap: 40px;
+				color: #253139;
+				font-size: 32px;
+				font-weight: 600;
+				margin-bottom: 35px;
+			}
+
+			.header-up-block {
+				height: 100px;
+				display: flex;
+				justify-content: space-around;
+				color: #253139;
+				text-align: center;
+				padding-top: 30px;
+				margin-bottom: 50px;
+			}
+
+			.icon {
+				cursor: pointer;
+			}
+
+			@media (max-width: 1000px) {
+				.logo,
+				.icon {
+					width: 70px;
+					height: 70px;
+				}
+			}
+
+			.h1-title {
+				font-size: 64px;
+				font-weight: 600;
+				width: 700px;
+				line-height: 34px;
+				margin-top: 20px;
+			}
+
+			span {
+				font-size: 32px;
+				font-weight: 500;
+			}
+
+			@media (max-width: 1370px) {
+				.h1-title {
+					font-size: 48px;
+					width: 550px;
+				}
+				.h1-title span {
+					font-size: 24px;
+				}
+			}
+
+			@media (max-width: 900px) {
+				.h1-title {
+					font-size: 36px;
+					width: 450px;
+				}
+				.h1-title span {
+					font-size: 20px;
+				}
+			}
+
+			.header-down-block {
+				height: 80px;
+				border-top: 2px solid #9cd7ff;
+				border-bottom: 2px solid #9cd7ff;
+			}
+
+			.nav-list {
+				display: flex;
+				align-items: center;
+				height: 80px;
+				justify-content: space-evenly;
+				font-size: 32px;
+				color: #1a2f3e;
+			}
+
+			@media (max-width: 680px) {
+				.nav-list img {
+					display: none;
+				}
+			}
+
+			.nav-link {
+				font-weight: 400;
+			}
+
+			@media (max-width: 1370px) {
+				.nav-link {
+					font-size: 24px;
+				}
+			}
+			@media (max-width: 900px) {
+				.nav-link {
+					font-size: 21px;
+				}
+			}
+
+			@media (max-width: 680px) {
+				.nav-link {
+					font-size: 15px;
+				}
+			}
+
+			.footer {
+				border-top: 2px solid #c0e6ff;
+				color: #fff;
+				font-weight: 600;
+			}
+
+			@media (max-width: 1370px) {
+				.footer-up-block {
+					font-size: 24px;
+				}
+			}
+
+			.footer-down-block {
+				height: 200px;
+				background: #145a88;
+			}
+
+			.container2 {
+				max-width: 1400px;
+				margin: 0 auto;
+				display: flex;
+				justify-content: space-evenly;
+				align-items: center;
+				height: 200px;
+			}
+
+			.social-icons {
+				display: flex;
+				gap: 40px;
+			}
+
+			@media (max-width: 1370px) {
+				.social-icons {
+					gap: 25px;
+				}
+				.tg,
+				.vk,
+				.inst {
+					width: 50px;
+					height: 50px;
+				}
+			}
+
+			@media (max-width: 990px) {
+				.social-icons {
+					gap: 15px;
+				}
+				.tg,
+				.vk,
+				.inst {
+					width: 40px;
+					height: 40px;
+				}
+			}
+
+			@media (max-width: 750px) {
+				.tg,
+				.vk,
+				.inst {
+					width: 30px;
+					height: 30px;
+				}
+			}
+
+			@media (max-width: 650px) {
+				.tg,
+				.vk,
+				.inst {
+					width: 25px;
+					height: 25px;
+				}
+			}
+
+			.footer-text {
+				font-size: 32px;
+				margin-bottom: 30px;
+			}
+
+			@media (max-width: 1370px) {
+				.footer-text {
+					font-size: 24px;
+				}
+			}
+
+			@media (max-width: 990px) {
+				.footer-text {
+					font-size: 20px;
+				}
+			}
+
+			@media (max-width: 750px) {
+				.footer-text {
+					font-size: 18px;
+				}
+			}
+
+			@media (max-width: 650px) {
+				.footer-text {
+					font-size: 14px;
+				}
+			}
+
+			.contact-numbers,
+			.email-text,
+			.help-text {
+				font-size: 24px;
+				margin-bottom: 15px;
+			}
+
+			@media (max-width: 1370px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 20px;
+				}
+			}
+
+			@media (max-width: 990px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 17px;
+				}
+			}
+
+			@media (max-width: 750px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 14px;
+				}
+			}
+
+			@media (max-width: 650px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 10px;
+				}
+			}
+			@media (max-width: 1370px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 20px;
+				}
+			}
+
+			@media (max-width: 990px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 17px;
+				}
+			}
+
+			@media (max-width: 750px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 14px;
+				}
+			}
+
+			@media (max-width: 650px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 10px;
+				}
+			}
+
+			.main-title {
+				text-align: center;
+				font-size: 64px;
+				color: #253139;
+				font-weight: 500;
+				margin-bottom: 50px;
+			}
+
+			.main-images {
+				display: flex;
+				gap: 50px;
+				margin-bottom: 50px;
+			}
+
+			.main-text {
+				font-size: 18px;
+				margin-bottom: 50px;
+			}
+
+			b {
+				font-size: 24px;
+				margin-top: 15px;
+			}
+
+			.map {
+				display: flex;
+				justify-content: center;
+			}
+			.main-subtitle {
+				font-size: 28px;
+				font-weight: 600;
+				margin: 20px 0 20px 20px;
+			}
+			.paragraph {
+				text-indent: 30px;
+			}
+		</style>
+
+		<div class="container">
+			<header class="header">
+				<div class="header-up-block">
+					<a href="index.html"
+						><img src="images/pngwing 4.png" alt="Логотип" class="logo"
+					/></a>
+					<h1 class="h1-title">
+						ASTRAKHAN.RU <span>Региональный интернет-портал</span>
+					</h1>
+					<a href="regist.html"
+						><img
+							src="images/gg_profile.png"
+							alt="Иконка аккаунта"
+							class="icon"
+					/></a>
+				</div>
+				<div class="header-down-block">
+					<nav class="nav-menu">
+						<ul class="nav-list">
+							<li>
+								<a href="history.html" class="nav-link">ИСТОРИЯ ГОРОДА</a>
+							</li>
+							<li><a href="poster.html" class="nav-link">АФИША</a></li>
+							<li>
+								<a
+									href="gallery.html"
+									class="nav-link"
+									style="text-decoration: underline; font-weight: 600"
+									>ГАЛЕРЕЯ</a
+								>
+							</li>
+							<li><a href="ads.html" class="nav-link">ОБЪЯВЛЕНИЯ</a></li>
+							<li>
+								<img
+									src="images/material-symbols_search.png"
+									alt=""
+									height="50px"
+									width="50px"
+								/>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+		</div>
+
+		<div class="container">
+			<main class="main">
+				<div class="main-title">АСТРАХАНСКИЙ КРЕМЛЬ</div>
+				<div class="main-images">
+					<img src="images/i.webp" alt="" width="50%" />
+					<img src="images/i (1).webp" alt="" width="50%" />
+				</div>
+				<div class="main-text">
+					<div class="main-subtitle">
+						Астраханский кремль: история и архитектура
+					</div>
+					<div class="paragraph">
+						Астраханский кремль — одно из первых мощных крепостных сооружений
+						Московского государства. Был построен с учетом передовых достижений
+						военной оборонной науки 16 века. Высота его стен достигает 11 м,
+						длина — более 1,5 км, а — толщина 2,8 до 5,2 метров. Комплекс
+						включает 7 башен (было 8, одна не сохранились до наших дней),
+						Пречистенские и Никольские ворота, а также соборы, монастыри,
+						часовни, храмы, казармы, складские помещения и многое другое. Общая
+						площадь ансамбля 11 гектар.
+					</div>
+					<div class="paragraph">
+						Интересно расположение Астраханского кремля. Построен на острове, на
+						естественном холме, называемом Заячий бугор. Место было выбрано не
+						случайно. Воды рек Волги, Кутумы и Царева ерика, а также глубокое
+						солончаковое болото делают крепость практически неприступной. Кремль
+						имеет форму длинного и узкого треугольника, каждая из сторон
+						которого укреплена тремя башнями. Снимок с воздуха Астраханского
+						кремля. В начале-середине 16 века на месте Астраханского кремля
+						находилась башня с проездными воротами. В 1558 здесь была построена
+						хорошо укреплённая деревянная крепость с раскатами и башнями. В
+						период с 1582 по 1589 была полностью перестроена. Так появился
+						белокаменный ансамбль по архитектуре напоминающий Московский Кремль.
+						Одной из целей постройки являлось создание мощного форпоста на южных
+						рубежах Российского государства. Многие годы крепость служила
+						защитой от войск татарского ханства. Кремль имеет богатую историю.
+						Здесь происходили важные политические события, напрямую влияющие на
+						ход развития страны. Так, в 1606 году именно здесь началось
+						восстание под руководством Болотникова. Восставшие штурмом взяли
+						крепость, прогнав оттуда изменников атамана Заруцкого и Марию
+						Мнишек.
+					</div>
+
+					<div class="main-subtitle">История и важные события</div>
+					<div class="paragraph">
+						В период с 1670 по 1671 Кремль является резиденцией Степана Разина.
+						Царским войскам стоило огромных трудов выгнать из крепости
+						разбойничьи отряды. А в 1918 году именно здесь дислоцировались
+						отряды Красной Гвардии, которым позже удалось разбить белое движение
+						и установить советскую власть в Астрахани и области. Для
+						строительства белокаменных стен использовался камень из разрушенной
+						столицы Золотой Орды Сарая-Бату. Стены и башни крепости были
+						идеально приспособлены для ведения ближнего боя. В двуногих зубцах
+						находились бойницы, с которых воины могли безопасно вести стрельбу
+						из ружей. Со стороны фасада были предусмотрены варницы, специальные
+						отверстия, через которые можно было обливать неприятеля кипяченой
+						водой или горячей смолой. Также были предусмотрены бойницы для
+						размещения дальнобойных орудий. Интересный факт.
+					</div>
+					<div class="paragraph">
+						Именно в Астраханском Кремле впервые в России была организована
+						линия среднего боя. Бойницы разного размера располагались в
+						шахматном порядке, что позволяло вести плотный огонь по врагу с
+						минимальным потерями для обороняющихся. На территории Астраханского
+						кремля находится Надвратная соборная колокольня высотой более 80
+						метров. Считается самой большой из всех ансамблей этого типа. А
+						Цейхгауз (бывшая оружейная и склад) сегодня стал крупнейшим
+						выставочным центром Астрахани и всего юга России. Здесь проходят
+						фотовыставки, фестивали и даже саммиты глав Каспийских государств.
+					</div>
+
+					<div class="main-subtitle">Современность и посещение</div>
+					<div class="paragraph">
+						Кремль открыт для посещения с 7:00 до 20:00. Музей доступен для
+						посещения с 10:00 до 17:00. Купить билет можно в кассе или на
+						официальном сайте историко-архитектурный комплекс. На сайте «Большая
+						Страна» вы сможете купить групповые туры в Астраханский кремль и
+						любые другие достопримечательности России. Наша платформа позволяет
+						покупать путевки по стране напрямую от организаторов, без наценок
+						посредников.
+					</div>
+				</div>
+				<div class="map">
+					<div style="position: relative; overflow: hidden">
+						<a
+							href="https://yandex.ru/maps/org/astrakhanskiy_kreml/97667868594/?utm_medium=mapframe&utm_source=maps"
+							style="color: #eee; font-size: 12px; position: absolute; top: 0px"
+							>Астраханский кремль</a
+						><a
+							href="https://yandex.ru/maps/37/astrahan/category/museum/184105894/?utm_medium=mapframe&utm_source=maps"
+							style="
+								color: #eee;
+								font-size: 12px;
+								position: absolute;
+								top: 14px;
+							"
+							>Музей в Астрахани</a
+						><a
+							href="https://yandex.ru/maps/37/astrahan/category/landmark_attraction/89683368508/?utm_medium=mapframe&utm_source=maps"
+							style="
+								color: #eee;
+								font-size: 12px;
+								position: absolute;
+								top: 28px;
+							"
+							>Достопримечательность в Астрахани</a
+						><iframe
+							src="https://yandex.ru/map-widget/v1/org/astrakhanskiy_kreml/97667868594/?ll=48.025957%2C46.341642&z=13"
+							width="1000"
+							height="500"
+							frameborder="1"
+							allowfullscreen="true"
+							style="position: relative"
+						></iframe>
+					</div>
+				</div>
+			</main>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<div class="footer-up-block">
+					<nav class="nav-menu">
+						<ul class="nav-list">
+							<li><a href="work.html" class="nav-link">РАБОТА</a></li>
+							<li><a href="ads.html" class="nav-link">ОБЪЯВЛЕНИЯ</a></li>
+							<li><a href="poster.html" class="nav-link">АФИША</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="footer-down-block">
+				<div class="container2">
+					<div class="social">
+						<div class="footer-text">Мы в соц. сетях:</div>
+						<div class="social-icons">
+							<a href="https://t.me/Ruslan167"
+								><img src="images/telegram_symbol.svg.png" alt="" class="tg"
+							/></a>
+							<a href="https://vk.com/id157025887"
+								><img src="images/vk_symbol.svg.png" alt="" class="vk"
+							/></a>
+							<a href="https://www.instagram.com/ruslan04048"
+								><img src="images/Group.png" alt="" class="inst"
+							/></a>
+						</div>
+					</div>
+					<div class="contact">
+						<div class="footer-text">Контакты:</div>
+						<div class="contact-numbers">
+							+79783216490 <br />
+							+79781296473
+						</div>
+					</div>
+					<div class="email">
+						<div class="footer-text">E-mail:</div>
+						<div class="email-text">
+							smi.astrakhan@mail.ru <br />
+							PR.astrakhan@mail.ru
+						</div>
+					</div>
+					<div class="help">
+						<div class="footer-text">Помощь</div>
+						<div class="help-text">
+							Служба поддержки <br />
+							Вопрос-ответ
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

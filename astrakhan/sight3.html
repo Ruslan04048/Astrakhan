@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>УСПЕНСКИЙ КАФЕДРАЛЬНЫЙ СОБОР</title>
+	</head>
+	<body>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			a {
+				text-decoration: none;
+				color: #1a2f3e;
+			}
+
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				overflow-x: hidden;
+				font-family: 'Montserrat', sans-serif;
+				box-sizing: border-box;
+			}
+
+			li {
+				list-style: none;
+			}
+
+			.container {
+				max-width: 1400px;
+				margin: 0 auto;
+			}
+
+			header {
+				margin-bottom: 30px;
+			}
+
+			.register-background {
+				background: #000000b0;
+				width: 100%;
+				height: 100vh;
+				position: absolute;
+				z-index: 1;
+				display: none;
+			}
+
+			.register-form {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background: #fff;
+				width: 750px;
+				height: 550px;
+				padding: 25px 15px;
+			}
+
+			.entrance-column {
+				width: 50%;
+				height: 550px;
+				border-right: 2px solid #103148;
+				float: left;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.entrance-up-row {
+				display: flex;
+				align-items: center;
+				margin-left: -100px;
+				margin-top: 40px;
+				gap: 65px;
+				color: #253139;
+				font-size: 32px;
+				font-weight: 600;
+				margin-bottom: 35px;
+			}
+
+			.up-row-img {
+				cursor: pointer;
+			}
+
+			.switch {
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				width: 310px;
+				height: 60px;
+				border: 1px solid #d8dce6;
+				border-radius: 20px;
+				margin-bottom: 25px;
+			}
+
+			.mail {
+				background: #f1f2f5;
+				padding: 18px 55px;
+				margin-left: -24px;
+				border-radius: 18px;
+			}
+
+			form {
+				display: flex;
+				flex-direction: column;
+			}
+
+			input {
+				width: 310px;
+				height: 60px;
+				margin-bottom: 25px;
+				border-radius: 20px;
+				border: none;
+				border: 2px solid #292933;
+				font-size: 24px;
+				padding: 0 0 0 15px;
+			}
+
+			form button {
+				width: 325px;
+				height: 60px;
+				border-radius: 20px;
+				background: #103148;
+				border: none;
+				font-size: 16px;
+				color: #fff;
+				cursor: pointer;
+				border: 1px solid #292933;
+			}
+
+			.register-column {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.register-up-row {
+				display: flex;
+				align-items: center;
+				margin-top: 40px;
+				gap: 40px;
+				color: #253139;
+				font-size: 32px;
+				font-weight: 600;
+				margin-bottom: 35px;
+			}
+
+			.header-up-block {
+				height: 100px;
+				display: flex;
+				justify-content: space-around;
+				color: #253139;
+				text-align: center;
+				padding-top: 30px;
+				margin-bottom: 50px;
+			}
+
+			.icon {
+				cursor: pointer;
+			}
+
+			@media (max-width: 1000px) {
+				.logo,
+				.icon {
+					width: 70px;
+					height: 70px;
+				}
+			}
+
+			.h1-title {
+				font-size: 64px;
+				font-weight: 600;
+				width: 700px;
+				line-height: 34px;
+				margin-top: 20px;
+			}
+
+			span {
+				font-size: 32px;
+				font-weight: 500;
+			}
+
+			@media (max-width: 1370px) {
+				.h1-title {
+					font-size: 48px;
+					width: 550px;
+				}
+				.h1-title span {
+					font-size: 24px;
+				}
+			}
+
+			@media (max-width: 900px) {
+				.h1-title {
+					font-size: 36px;
+					width: 450px;
+				}
+				.h1-title span {
+					font-size: 20px;
+				}
+			}
+
+			.header-down-block {
+				height: 80px;
+				border-top: 2px solid #9cd7ff;
+				border-bottom: 2px solid #9cd7ff;
+			}
+
+			.nav-list {
+				display: flex;
+				align-items: center;
+				height: 80px;
+				justify-content: space-evenly;
+				font-size: 32px;
+				color: #1a2f3e;
+			}
+
+			@media (max-width: 680px) {
+				.nav-list img {
+					display: none;
+				}
+			}
+
+			.nav-link {
+				font-weight: 400;
+			}
+
+			@media (max-width: 1370px) {
+				.nav-link {
+					font-size: 24px;
+				}
+			}
+			@media (max-width: 900px) {
+				.nav-link {
+					font-size: 21px;
+				}
+			}
+
+			@media (max-width: 680px) {
+				.nav-link {
+					font-size: 15px;
+				}
+			}
+
+			.footer {
+				border-top: 2px solid #c0e6ff;
+				color: #fff;
+				font-weight: 600;
+			}
+
+			@media (max-width: 1370px) {
+				.footer-up-block {
+					font-size: 24px;
+				}
+			}
+
+			.footer-down-block {
+				height: 200px;
+				background: #145a88;
+			}
+
+			.container2 {
+				max-width: 1400px;
+				margin: 0 auto;
+				display: flex;
+				justify-content: space-evenly;
+				align-items: center;
+				height: 200px;
+			}
+
+			.social-icons {
+				display: flex;
+				gap: 40px;
+			}
+
+			@media (max-width: 1370px) {
+				.social-icons {
+					gap: 25px;
+				}
+				.tg,
+				.vk,
+				.inst {
+					width: 50px;
+					height: 50px;
+				}
+			}
+
+			@media (max-width: 990px) {
+				.social-icons {
+					gap: 15px;
+				}
+				.tg,
+				.vk,
+				.inst {
+					width: 40px;
+					height: 40px;
+				}
+			}
+
+			@media (max-width: 750px) {
+				.tg,
+				.vk,
+				.inst {
+					width: 30px;
+					height: 30px;
+				}
+			}
+
+			@media (max-width: 650px) {
+				.tg,
+				.vk,
+				.inst {
+					width: 25px;
+					height: 25px;
+				}
+			}
+
+			.footer-text {
+				font-size: 32px;
+				margin-bottom: 30px;
+			}
+
+			@media (max-width: 1370px) {
+				.footer-text {
+					font-size: 24px;
+				}
+			}
+
+			@media (max-width: 990px) {
+				.footer-text {
+					font-size: 20px;
+				}
+			}
+
+			@media (max-width: 750px) {
+				.footer-text {
+					font-size: 18px;
+				}
+			}
+
+			@media (max-width: 650px) {
+				.footer-text {
+					font-size: 14px;
+				}
+			}
+
+			.contact-numbers,
+			.email-text,
+			.help-text {
+				font-size: 24px;
+				margin-bottom: 15px;
+			}
+
+			@media (max-width: 1370px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 20px;
+				}
+			}
+
+			@media (max-width: 990px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 17px;
+				}
+			}
+
+			@media (max-width: 750px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 14px;
+				}
+			}
+
+			@media (max-width: 650px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 10px;
+				}
+			}
+			@media (max-width: 1370px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 20px;
+				}
+			}
+
+			@media (max-width: 990px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 17px;
+				}
+			}
+
+			@media (max-width: 750px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 14px;
+				}
+			}
+
+			@media (max-width: 650px) {
+				.contact-numbers,
+				.email-text,
+				.help-text {
+					font-size: 10px;
+				}
+			}
+
+			.main-title {
+				text-align: center;
+				font-size: 64px;
+				color: #253139;
+				font-weight: 500;
+				margin-bottom: 50px;
+			}
+
+			.main-images {
+				display: flex;
+				gap: 50px;
+				margin-bottom: 50px;
+			}
+
+			.main-text {
+				font-size: 18px;
+				margin-bottom: 50px;
+			}
+
+			b {
+				font-size: 24px;
+				margin-top: 15px;
+			}
+
+			.map {
+				display: flex;
+				justify-content: center;
+			}
+			.main-subtitle {
+				font-size: 28px;
+				font-weight: 600;
+				margin: 20px 0 20px 20px;
+			}
+			.paragraph {
+				text-indent: 30px;
+			}
+		</style>
+
+		<div class="container">
+			<header class="header">
+				<div class="header-up-block">
+					<a href="index.html"
+						><img src="images/pngwing 4.png" alt="Логотип" class="logo"
+					/></a>
+					<h1 class="h1-title">
+						ASTRAKHAN.RU <span>Региональный интернет-портал</span>
+					</h1>
+					<a href="regist.html"
+						><img
+							src="images/gg_profile.png"
+							alt="Иконка аккаунта"
+							class="icon"
+					/></a>
+				</div>
+				<div class="header-down-block">
+					<nav class="nav-menu">
+						<ul class="nav-list">
+							<li>
+								<a href="history.html" class="nav-link">ИСТОРИЯ ГОРОДА</a>
+							</li>
+							<li><a href="poster.html" class="nav-link">АФИША</a></li>
+							<li>
+								<a
+									href="gallery.html"
+									class="nav-link"
+									style="text-decoration: underline; font-weight: 600"
+									>ГАЛЕРЕЯ</a
+								>
+							</li>
+							<li><a href="ads.html" class="nav-link">ОБЪЯВЛЕНИЯ</a></li>
+							<li>
+								<img
+									src="images/material-symbols_search.png"
+									alt=""
+									height="50px"
+									width="50px"
+								/>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+		</div>
+
+		<div class="container">
+			<main class="main">
+				<div class="main-title">УСПЕНСКИЙ КАФЕДРАЛЬНЫЙ СОБОР</div>
+				<div class="main-images">
+					<img src="images/i (4).webp" alt="" width="50%" />
+					<img src="images/i (5).webp" alt="" width="50%" />
+				</div>
+				<div class="main-text">
+					<div class="main-subtitle">
+						Первый собор на месте нынешнего Успенского собора
+					</div>
+					<div class="paragraph">
+						Настоящий Успенский собор является не первым, построенным на этом
+						месте. К тому же он как бы заключает в себе два предыдущих
+						древнейших собора астраханских. Первый собор был построен в 1568
+						году игуменом Кириллом и освящён в честь Сретения Владимирской иконы
+						Божией Матери. Причиной такого названия храма послужила одноимённая
+						икона, присланная с игуменом царём Иоанном Грозным “из своих царских
+						чертогов” в благословение городу Астрахани, только что
+						присоединённому под державу московских государей. Икона эта была
+						точным списком с чудотворного образа, хранившегося в Успенском
+						соборе города Москвы.
+					</div>
+					<div class="paragraph">
+						В честь торжественной встречи (Сретения - в церковнославянском
+						языке) Владимирской иконы Божией Матери первый астраханский собор
+						получил также название Сретенского, под каким названием и
+						фигурировал во всех официальных документах. Храм был деревянным и
+						очень небольшим. По мере роста города Астрахани такой маленький
+						собор не мог соответствовать его статусу. Это понимали царь Фёдор
+						Иоаннович и первый российский патриарх Иов. По их благословению в
+						начале 90-х годов XVI века в Астрахань был послан игумен Феодосий
+						(будущий первый архиепископ Астраханский) с поручением построить
+						здесь новую “соборную и апостольскую церковь”.
+					</div>
+
+					<div class="main-subtitle">
+						Строительство и возведение нового каменного храма
+					</div>
+					<div class="paragraph">
+						Новый каменный храм был закончен в 1602 году. Получил он
+						наименование в честь Успения Божией Матери. Несомненною причиною
+						тому был особый статус Астрахани, бывшей третьим по числу царством в
+						титуле московских царей. И так как Астрахань считалась “младшей
+						сестрой” царского града Москвы, именовавшегося “домом Пресвятой
+						Богородицы”, то и она получала подобный титул, и главный соборный
+						храм её также получал наименование подобно московскому Успенскому
+						собору. В соответствии с этим и икона Владимирской Божией Матери,
+						хранившаяся до этого в старом Сретенском соборе, была перенесена в
+						новый Успенский и была поставлена здесь подобно тому, как в
+						Московском Успенском соборе стояла чудотворная Владимирская икона.
+						Старый же Сретенский собор в 1628 году ещё продолжал именоваться
+						“старым собором”, видимо в память его прежнего положения, и состоял
+						на “ружном окладе” (государственном содержании). Но в 1697 году он
+						уже именуется обычным приходским храмом.
+					</div>
+
+					<div class="main-subtitle">
+						Развитие и расширение Успенского собора
+					</div>
+					<div class="paragraph">
+						Новый Успенский собор в 1642 году был расширен пристройкой нового
+						придела с правой стороны во имя Святых Афанасия и Кирилла,
+						патриархов Александрийских. Причиной тому послужило удачное
+						отражение астраханскими ратниками нападения калмыцкой орды во главе
+						с ханом Хо-Урлюком на город, случившееся в день 18 января, когда
+						праздновалась память названных святителей (В “Ключаревской летописи”
+						это событие относится ко времени Астраханского архиепископа Рафаила
+						(1638 - 1640 гг.) и называются киргиз-кайсаки (т. е. казахи), но
+						сведения эти неверны, так как описываемое в “Ключаревской летописи”
+						событие в точности повторяет сообщение о нападении на Астрахань
+						калмыков в 1642 году).
+					</div>
+				</div>
+				<div class="map">
+					<div style="position: relative; overflow: hidden">
+						<a
+							href="https://yandex.ru/maps/org/kafedralny_sobor_uspeniya_presvyatoy_bogoroditsy/1070292666/?utm_medium=mapframe&utm_source=maps"
+							style="color: #eee; font-size: 12px; position: absolute; top: 0px"
+							>Кафедральный собор Успения Пресвятой Богородицы</a
+						><a
+							href="https://yandex.ru/maps/37/astrahan/category/orthodox_church/53436519791/?utm_medium=mapframe&utm_source=maps"
+							style="
+								color: #eee;
+								font-size: 12px;
+								position: absolute;
+								top: 14px;
+							"
+							>Православный храм в Астрахани</a
+						><iframe
+							src="https://yandex.ru/map-widget/v1/org/kafedralny_sobor_uspeniya_presvyatoy_bogoroditsy/1070292666/?ll=48.032999%2C46.349300&z=16"
+							width="1000"
+							height="500"
+							frameborder="1"
+							allowfullscreen="true"
+							style="position: relative"
+						></iframe>
+					</div>
+				</div>
+			</main>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<div class="footer-up-block">
+					<nav class="nav-menu">
+						<ul class="nav-list">
+							<li><a href="work.html" class="nav-link">РАБОТА</a></li>
+							<li><a href="ads.html" class="nav-link">ОБЪЯВЛЕНИЯ</a></li>
+							<li><a href="poster.html" class="nav-link">АФИША</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="footer-down-block">
+				<div class="container2">
+					<div class="social">
+						<div class="footer-text">Мы в соц. сетях:</div>
+						<div class="social-icons">
+							<a href="https://t.me/Ruslan167"
+								><img src="images/telegram_symbol.svg.png" alt="" class="tg"
+							/></a>
+							<a href="https://vk.com/id157025887"
+								><img src="images/vk_symbol.svg.png" alt="" class="vk"
+							/></a>
+							<a href="https://www.instagram.com/ruslan04048"
+								><img src="images/Group.png" alt="" class="inst"
+							/></a>
+						</div>
+					</div>
+					<div class="contact">
+						<div class="footer-text">Контакты:</div>
+						<div class="contact-numbers">
+							+79783216490 <br />
+							+79781296473
+						</div>
+					</div>
+					<div class="email">
+						<div class="footer-text">E-mail:</div>
+						<div class="email-text">
+							smi.astrakhan@mail.ru <br />
+							PR.astrakhan@mail.ru
+						</div>
+					</div>
+					<div class="help">
+						<div class="footer-text">Помощь</div>
+						<div class="help-text">
+							Служба поддержки <br />
+							Вопрос-ответ
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
